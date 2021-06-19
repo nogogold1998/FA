@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currentWeatherEntry"
+            type="gst.trainingcourse.lesson1417_congvc7.data.model.CurrentWeatherEntry" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:elevation="@dimen/elevation_surface"
+        app:cardCornerRadius="@dimen/card_corner_radius_medium">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/light_green_50"
+            android:padding="@dimen/card_padding_small">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currentWeatherEntry.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/cities" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_temperature"
+                temperature="@{currentWeatherEntry.mainInfo.temperature}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView"
+                tools:text="20.3°C" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_label_feels_like_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feels_like"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_center_horizontal"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_temperature" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_feels_like_temperature"
+                temperature="@{currentWeatherEntry.mainInfo.feelsLikeTemperature}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/guideline_center_horizontal"
+                app:layout_constraintTop_toTopOf="@+id/text_label_feels_like_temperature"
+                tools:text="23.1°C" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_label_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pressure"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_center_horizontal"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_label_feels_like_temperature" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_pressure"
+                pressure="@{currentWeatherEntry.mainInfo.pressure}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/guideline_center_horizontal"
+                app:layout_constraintTop_toTopOf="@+id/text_label_pressure"
+                tools:text="100.6kPa" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_label_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_label_pressure" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_humidity"
+                percentage="@{currentWeatherEntry.mainInfo.humidity}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/guideline_center_horizontal"
+                app:layout_constraintTop_toTopOf="@id/text_label_humidity"
+                tools:text="100%" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

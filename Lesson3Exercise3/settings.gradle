@@ -1,0 +1,3 @@
+rootProject.name = "Lesson 3 Exercise 3"
+include ':appA'
+include ':appB'

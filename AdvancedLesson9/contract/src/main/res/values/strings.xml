@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_provider_transaction_write">gst.trainingcourse.lesson9.provider.transaction.permission.WRITE</string>
+    <string name="permission_provider_transaction_read">gst.trainingcourse.lesson9.provider.transaction.permission.READ</string>
+</resources>

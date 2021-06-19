@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lesson 5</string>
+    <string name="card_information">Card information</string>
+    <string name="list_card_holder_name">List Card holder name</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="update">Update</string>
+    <string name="close">Close</string>
+    <string name="update_card_information">Update card information</string>
+    <string name="card_holder_name">Card holder name</string>
+    <string name="card_number">Card number</string>
+    <string name="save">Save</string>
+</resources>

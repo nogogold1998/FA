@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="margin_surface_normal">4dp</dimen>
+    <dimen name="margin_content_normal">8dp</dimen>
+
+    <dimen name="elevation_surface_emphasis_high">4dp</dimen>
+    <dimen name="elevation_surface_small">1dp</dimen>
+
+    <dimen name="corner_surface_large">8dp</dimen>
+
+    <dimen name="padding_grid_normal">8dp</dimen>
+    <dimen name="padding_surface_large">8dp</dimen>
+    <dimen name="padding_scrollable_vertical">32dp</dimen>
+</resources>

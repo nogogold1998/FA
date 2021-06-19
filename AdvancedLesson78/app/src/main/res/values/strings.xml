@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Advanced Lesson 7 8</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="password_too_short">At least 8 characters</string>
+    <string name="wrong_email_format">Wrong email format</string>
+    <string name="wrong_email_password">Wrong email or password!</string>
+    <string name="welcome">Welcome</string>
+    <string name="sign_up">Sign up</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="repeat_password_not_match">Repeat password does not match</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create">Create</string>
+    <string name="no_i_m_good">No I\'m good</string>
+    <string name="account_already_exists">Account already exists</string>
+</resources>

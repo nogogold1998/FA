@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Client</string>
+    <string name="aidl_result">AIDL result</string>
+    <string name="format_aidl_result">AIDL result: %1$s</string>
+    <string name="call_aidl">call server</string>
+    <string name="server_not_connected">Server is not connected</string>
+</resources>

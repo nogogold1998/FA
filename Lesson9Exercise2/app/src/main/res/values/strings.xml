@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lesson 9 Exercise 2</string>
+    <string name="add_contact">Add contact</string>
+    <string name="contact_name">Contact name:</string>
+    <string name="contact_number">Contact number</string>
+    <string name="hint_name">Nguyen Van A</string>
+    <string name="hint_number">000-000-0000</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lesson 3 Exercise 1</string>
+    <string name="error_receive_boot_permission_not_granted">Please turn on permission</string>
+    <string name="msg_receive_boot_permission_required">App needs receive boot permission to work correctly</string>
+</resources>

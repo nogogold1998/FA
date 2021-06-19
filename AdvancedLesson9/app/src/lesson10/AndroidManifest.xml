@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="gst.trainingcourse.advancedlesson9_congvc7">
+
+    <!--FIXME: these do not granted permission. Don't know why.  -->
+    <!--SOLVED: never use string resource in property "name" of uses-permission tag. Inline permission name-->
+    <uses-permission android:name="gst.trainingcourse.lesson9.provider.transaction.permission.WRITE" />
+    <uses-permission android:name="gst.trainingcourse.lesson9.provider.transaction.permission.READ" />
+
+    <application tools:ignore="AllowBackup">
+
+    </application>
+    <queries>
+        <!--FACT: must include one of these for api 30 or greater. FYI: Package visibility in Android 11-->
+        <!--FIXME: does not work-->
+        <!--<package android:name="gst.trainingcourse.advancedlesson9_congvc7.lesson9.data.provider" />-->
+        <!--OR-->
+        <provider android:authorities="gst.trainingcourse.advancedlesson9_congvc7" />
+    </queries>
+
+</manifest>

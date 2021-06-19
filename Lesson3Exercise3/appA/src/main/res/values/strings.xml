@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Application A</string>
+    <string name="title_start_intent">Start with Intent</string>
+    <string name="title_start_broadcast">Start with broadcast</string>
+</resources>

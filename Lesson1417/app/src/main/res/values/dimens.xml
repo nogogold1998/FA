@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_start_medium">8dp</dimen>
+    <dimen name="padding_screen_medium">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="card_corner_radius_medium">8dp</dimen>
+    <dimen name="card_padding_small">4dp</dimen>
+    <dimen name="elevation_surface">1dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="item_weather_entry_width">120dp</dimen>
+    <dimen name="item_weather_entry_height">160dp</dimen>
+</resources>

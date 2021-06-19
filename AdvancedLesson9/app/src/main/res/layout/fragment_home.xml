@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="gst.trainingcourse.advancedlesson9_congvc7.ui.home.HomeFragment">
+
+    <data>
+
+        <variable
+            name="homeVM"
+            type="gst.trainingcourse.advancedlesson9_congvc7.ui.home.HomeViewModel" />
+
+        <variable
+            name="transactionAdapter"
+            type="gst.trainingcourse.advancedlesson9_congvc7.ui.home.TransactionAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_revenue"
+            style="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_surface_normal"
+            android:elevation="@dimen/elevation_surface_emphasis_high"
+            app:cardCornerRadius="@dimen/corner_surface_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/padding_surface_large"
+                android:paddingBottom="@dimen/padding_surface_large">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_input_revenue"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/revenue"
+                    app:counterOverflowTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:hintTextColor="?attr/colorPrimary"
+                    app:suffixText="@{homeVM.revenue.toString()}"
+                    app:suffixTextAppearance="?textAppearanceHeadline5">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/text_autocomplete_currency_type"
+                        currency="@={homeVM.currency}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:inputType="none"
+                        tools:ignore="Deprecated" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/button_sale"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_transaction_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transaction_type" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_time" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_holder_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/holder_name" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/currency" />
+                </com.google.android.material.chip.ChipGroup>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_transaction"
+            transactionAdapter="@{transactionAdapter}"
+            transactionList="@{homeVM.transactions}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/padding_scrollable_vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_revenue"
+            tools:listitem="@layout/item_recycler_transaction" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

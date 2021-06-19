@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="gst.trainingcourse.advancedlesson9_congvc7">
+
+    <!--FACT: android:protectionLevel do work, but use site app will grated at install time or request it later-->
+    <permission android:name="@string/permission_provider_transaction_read" />
+    <permission android:name="@string/permission_provider_transaction_write" />
+
+    <application tools:ignore="AllowBackup">
+
+        <provider
+            android:name=".data.provider.TransactionContentProvider"
+            android:authorities="gst.trainingcourse.advancedlesson9_congvc7"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="@string/permission_provider_transaction_read"
+            android:writePermission="@string/permission_provider_transaction_write" />
+    </application>
+
+</manifest>

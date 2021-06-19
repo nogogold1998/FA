@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addTransactionVM"
+            type="gst.trainingcourse.advancedlesson9_congvc7.ui.add.AddTransactionViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_grid_normal"
+        tools:context="gst.trainingcourse.advancedlesson9_congvc7.ui.add.AddTransactionFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton"
+                transactionType="@={addTransactionVM.transactionType}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:checkedButton="@id/button_toggle_sale"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_toggle_sale"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sale" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_toggle_refund"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/refund" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_holder_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                error="@{addTransactionVM.errorHolderName}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/holder_name"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toBottomOf="@+id/toggleButton">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_holder_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="@={addTransactionVM.holderName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_amount"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/amount"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_holder_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:text="@{addTransactionVM.amount}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_currency"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/currency"
+                app:counterOverflowTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:hintTextColor="?attr/colorPrimary"
+                app:suffixTextAppearance="?textAppearanceHeadline5">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/text_autocomplete_currency_type"
+                    currency="@={addTransactionVM.currency}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:inputType="none"
+                    tools:ignore="Deprecated" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

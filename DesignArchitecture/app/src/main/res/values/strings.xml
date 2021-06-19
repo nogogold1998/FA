@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Design Architecture</string>
+    <string name="please_login">Please login</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="login">Login</string>
+    <string name="remember_me">remember me</string>
+
+    <string name="login_msg_short_password">Password must at least 6 characters</string>
+    <string name="login_error_wrong_email_password">Your email or password is wrong!</string>
+    <string name="logged_in">You have logged in</string>
+    <string name="login_msg_success">Success</string>
+</resources>

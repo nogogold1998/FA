@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="transaction"
+            type="gst.trainingcourse.advancedlesson9_congvc7.data.model.Transaction" />
+
+        <import type="gst.trainingcourse.advancedlesson9_congvc7.data.model.Transaction" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_surface_normal"
+        android:elevation="@dimen/elevation_surface_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{transaction.type == Transaction.Type.SALE ? @color/light_green_a100 : @color/deep_orange_200, default=@color/white}"
+            android:padding="@dimen/padding_surface_large"
+            tools:background="@color/light_green_a100">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@{transaction.type == Transaction.Type.SALE ? @drawable/ic_baseline_call_made_24 : @drawable/ic_baseline_call_received_24}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_holder_name"
+                tools:src="@drawable/ic_baseline_call_made_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_transaction_type"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_content_normal"
+                android:text="@{transaction.type.toString()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
+                app:layout_constraintTop_toBottomOf="@+id/text_holder_name"
+                tools:text="SALE" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_currency"
+                currency="@{transaction.currency}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/material_on_surface_emphasis_high_type"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/text_balance_amount"
+                app:layout_constraintEnd_toStartOf="@+id/text_balance_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/text_transaction_type"
+                tools:text="USD" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_balance_amount"
+                balanceAmount="@{transaction.amount}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_content_normal"
+                android:textColor="@color/material_on_surface_emphasis_high_type"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/text_currency"
+                app:layout_constraintTop_toBottomOf="@+id/text_date"
+                tools:text="100,000.00" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_holder_name"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{transaction.holderName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@+id/text_transaction_type"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/full_names" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_date"
+                dateTime="@{transaction.dateTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/text_transaction_type"
+                app:layout_constraintTop_toBottomOf="@+id/text_holder_name"
+                tools:text="@tools:sample/date/mmddyy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Basic Android Final Exam</string>
+    <string name="main_label_start_service">Start calculating sum from 1 to 1_000_000 in background service</string>
+    <string name="main_action_start">Start</string>
+</resources>

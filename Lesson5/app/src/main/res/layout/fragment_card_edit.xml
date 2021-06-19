@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:padding="@dimen/dp_24">
+
+    <TextView
+        android:id="@+id/edit_fragment_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update_card_information"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/edit_title_holder_name"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_24"
+        android:text="@string/card_holder_name"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/edit_title_card_number"
+        app:layout_constraintEnd_toStartOf="@+id/edit_guideline_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_fragment_header" />
+
+    <EditText
+        android:id="@+id/edit_edit_expiry_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_title_expiry_date"
+        app:layout_constraintEnd_toEndOf="@+id/edit_edit_card_number"
+        app:layout_constraintStart_toStartOf="@+id/edit_edit_card_number"
+        app:layout_constraintTop_toTopOf="@+id/edit_title_expiry_date"
+        tools:ignore="LabelFor,TextFields" />
+
+    <TextView
+        android:id="@+id/edit_title_card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_24"
+        android:text="@string/card_number"
+        app:layout_constraintBottom_toTopOf="@+id/edit_title_expiry_date"
+        app:layout_constraintStart_toStartOf="@+id/edit_title_holder_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_title_holder_name" />
+
+    <EditText
+        android:id="@+id/edit_edit_holder_name"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="wrap_content"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:layout_marginStart="@dimen/dp_24"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_title_holder_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edit_guideline_vertical"
+        app:layout_constraintTop_toTopOf="@+id/edit_title_holder_name"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/edit_title_expiry_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_24"
+        android:text="@string/expiry_date"
+        app:layout_constraintBottom_toTopOf="@+id/edit_button_save"
+        app:layout_constraintStart_toStartOf="@+id/edit_title_holder_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_title_card_number" />
+
+
+    <EditText
+        android:id="@+id/edit_edit_card_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_title_card_number"
+        app:layout_constraintEnd_toEndOf="@+id/edit_edit_holder_name"
+        app:layout_constraintStart_toStartOf="@+id/edit_edit_holder_name"
+        app:layout_constraintTop_toTopOf="@+id/edit_title_card_number"
+        tools:ignore="Autofill,LabelFor,TextFields" />
+
+    <Button
+        android:id="@+id/edit_button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/edit_guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

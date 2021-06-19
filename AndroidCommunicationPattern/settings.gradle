@@ -1,0 +1,2 @@
+rootProject.name = "Android Communication Pattern"
+include ':app'
